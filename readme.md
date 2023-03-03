@@ -1,6 +1,6 @@
-## Simple Mono E-Commerce API
+## Simple Tandeem Lowongan API
 
-Tandeem Lowongan API
+Dibuat dengan Express dan MySQL
 
 ### Setup Instruction
 
