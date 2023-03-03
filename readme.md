@@ -9,7 +9,9 @@ Tandeem Lowongan API
   git clone https://github.com/ferdianzh/td-lowongan-api.git
   ```
 
-- Ubah nama file **.env-copy** menjadi **.env**
+- Buat database baru pada MySQL dengan nama **td_lowongan**
+
+- Ubah nama file **.env-copy** menjadi **.env**, dan sesuaikan dengan setting MySQL anda.
 
 - Jalankan perintah berikut pada folder root:
   ```bash
