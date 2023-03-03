@@ -1,20 +1,23 @@
 const express = require('express')
 const { Sequelize } = require('sequelize')
 
+const auth = require('./middleware/auth.js')
+const authRouter = require('./routes/authentication.route.js')
 const lowonganRouter = require('./routes/lowongan.route.js')
 
 const app = express()
 app.use(express.json())
 require('dotenv').config()
 
-app.use('/lowongan', lowonganRouter)
+app.use('/auth', authRouter)
+app.use('/lowongan', auth, lowonganRouter)
 
 const sequelize = new Sequelize(
-  process.env.DATABASE_NAME,
-  process.env.DATABASE_USER,
+  process.env.MYSQL_DBNAME,
+  process.env.MYSQL_USER,
   undefined,
   {
-    host: process.env.DATABASE_HOST,
+    host: process.env.MYSQL_HOST,
     dialect: 'mysql'
   }
 )
