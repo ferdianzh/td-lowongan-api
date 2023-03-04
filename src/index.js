@@ -1,4 +1,5 @@
 const express = require('express')
+const cors = require('cors')
 const { Sequelize } = require('sequelize')
 
 const auth = require('./middleware/auth.js')
@@ -7,6 +8,7 @@ const lowonganRouter = require('./routes/lowongan.route.js')
 
 const app = express()
 app.use(express.json())
+app.use(cors())
 require('dotenv').config()
 
 app.use('/auth', authRouter)
